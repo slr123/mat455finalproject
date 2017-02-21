@@ -1,8 +1,8 @@
-```{r warrning = FALSE, message=FALSE}
+```{r warning = FALSE, message=FALSE}
 library(quantmod)
 ```
 
-```{r}
+```{r warning = FALSE, message = FALSE}
 getSymbols("AEO", from = "2012/1/1", to = "2016/12/31")
 getSymbols("BAC", from = "2012/1/1", to = "2016/12/31")
 getSymbols("COF", from = "2012/1/1", to = "2016/12/31")
