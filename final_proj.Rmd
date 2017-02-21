@@ -1,0 +1,42 @@
+```{r warrning = FALSE, message=FALSE}
+library(quantmod)
+```
+
+```{r}
+getSymbols("AEO", from = "2012/1/1", to = "2016/12/31")
+getSymbols("BAC", from = "2012/1/1", to = "2016/12/31")
+getSymbols("COF", from = "2012/1/1", to = "2016/12/31")
+getSymbols("H", from = "2012/1/1", to = "2016/12/31")
+getSymbols("TIF", from = "2012/1/1", to = "2016/12/31")
+```
+```{r}
+aeo_logrtn <- diff(log(as.numeric(AEO$AEO.Adjusted)))
+par(mfrow = c(2,1))
+plot.ts(aeo_logrtn)
+acf(aeo_logrtn)
+```
+```{r}
+BAC_logrtn <- diff(log(as.numeric(BAC$BAC.Adjusted)))
+par(mfrow = c(2,1))
+plot.ts(BAC_logrtn)
+acf(BAC_logrtn)
+```
+```{r}
+COF_logrtn <- diff(log(as.numeric(COF$COF.Adjusted)))
+par(mfrow = c(2,1))
+plot.ts(COF_logrtn)
+acf(COF_logrtn)
+```
+```{r}
+H_logrtn <- diff(log(as.numeric(H$H.Adjusted)))
+par(mfrow = c(2,1))
+plot.ts(H_logrtn)
+acf(H_logrtn)
+```
+```{r}
+tif_logrtn <- diff(log(as.numeric(TIF$TIF.Adjusted)))
+par(mfrow = c(2,1))
+plot.ts(tif_logrtn)
+acf(tif_logrtn)
+```
+
